@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: deployment-rollout
-  name: deployment-rollout
+    app: aspnet-deployment
+  name: aspnet-deployment
 spec:
   replicas: 1
   strategy:
@@ -13,12 +13,12 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      app: deployment-rollout-app
+      app: aspnet-deployment-app
   strategy: {}
   template:
     metadata:
       labels:
-        app: deployment-rollout-app
+        app: aspnet-deployment-app
     spec:
       containers:
       - image: mcr.microsoft.com/dotnet/samples:aspnetapp
